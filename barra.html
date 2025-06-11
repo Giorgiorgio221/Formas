@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio CSS 4 - Gráfico de Barras</title>
+<link rel="stylesheet" href="barra.css">
+</head>
+<body>
+    <h1 class="title">Desafio CSS 4: Gráfico de Barras</h1>
+    <div id="container">
+        <div class="chart-title">Desempenho Mensal - 2023</div>
+        <div class="chart-grid"></div>
+        <div class="chart-hover-effect"></div>
+        
+        <div class="chart-axis"></div>
+        
+        <div class="y-markers">
+            <div class="y-marker">100%</div>
+            <div class="y-marker">75%</div>
+            <div class="y-marker">50%</div>
+            <div class="y-marker">25%</div>
+            <div class="y-marker">0%</div>
+        </div>
+        
+        <div class="bars-container">
+            <div class="bar-wrapper">
+                <div class="bar" style="height: 20%;">
+                    <div class="bar-value">20%</div>
+                    <div class="bar-tooltip">Janeiro: 20% de crescimento</div>
+                </div>
+                <div class="bar-label">Jan</div>
+            </div>
+            
+            <div class="bar-wrapper">
+                <div class="bar" style="height: 45%;">
+                    <div class="bar-value">45%</div>
+                    <div class="bar-tooltip">Fevereiro: 45% de crescimento</div>
+                </div>
+                <div class="bar-label">Fev</div>
+            </div>
+            
+            <div class="bar-wrapper">
+                <div class="bar" style="height: 70%;">
+                    <div class="bar-value">70%</div>
+                    <div class="bar-tooltip">Março: 70% de crescimento</div>
+                </div>
+                <div class="bar-label">Mar</div>
+            </div>
+            
+            <div class="bar-wrapper">
+                <div class="bar" style="height: 35%;">
+                    <div class="bar-value">35%</div>
+                    <div class="bar-tooltip">Abril: 35% de crescimento</div>
+                </div>
+                <div class="bar-label">Abr</div>
+            </div>
+            
+            <div class="bar-wrapper">
+                <div class="bar" style="height: 85%;">
+                    <div class="bar-value">85%</div>
+                    <div class="bar-tooltip">Maio: 85% de crescimento</div>
+                </div>
+                <div class="bar-label">Mai</div>
+            </div>
+            
+            <div class="bar-wrapper">
+                <div class="bar" style="height: 60%;">
+                    <div class="bar-value">60%</div>
+                    <div class="bar-tooltip">Junho: 60% de crescimento</div>
+                </div>
+                <div class="bar-label">Jun</div>
+            </div>
+            
+            <div class="bar-wrapper">
+                <div class="bar" style="height: 95%;">
+                    <div class="bar-value">95%</div>
+                    <div class="bar-tooltip">Julho: 95% de crescimento</div>
+                </div>
+                <div class="bar-label">Jul</div>
+            </div>
+        </div>
+        
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(to top, #ff7e5f, #feb47b);"></div>
+                <span>Crescimento</span>
+            </div>
+        </div>
+    </div>
+    
+<div class="nav-buttons">
+    <a href="music.html" class="nav-btn back">Voltar</a>
+    <a href="deco.html" class="nav-btn">Próximo</a>
+</div>
+
+<script>
+    function nextChallenge() {
+        window.location.href = "deco.html";
+    }
+</script>
+
+
+    <script>
+        function nextChallenge() {
+            alert("Próximo desafio será carregado quando autorizado!");
+            // Lógica para carregar o próximo desafio
+        }
+
+        // Efeito de hover dinâmico
+        const bars = document.querySelectorAll('.bar');
+        const hoverEffect = document.querySelector('.chart-hover-effect');
+        
+        bars.forEach(bar => {
+            bar.addEventListener('mouseenter', function() {
+                const rect = this.getBoundingClientRect();
+                const containerRect = document.querySelector('#container').getBoundingClientRect();
+                
+                hoverEffect.style.background = `radial-gradient(circle at ${rect.left - containerRect.left + rect.width/2}px ${rect.top - containerRect.top + rect.height/2}px, rgba(255,190,118,0.2) 0%, transparent 70%)`;
+                hoverEffect.style.opacity = '1';
+            });
+            
+            bar.addEventListener('mouseleave', function() {
+                hoverEffect.style.opacity = '0';
+            });
+        });
+    </script>
+</body>
+</html>
