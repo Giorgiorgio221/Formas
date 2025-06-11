@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio CSS 3 - Interface de Música</title>
+<link rel="stylesheet" href="music.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <h1 class="title">Desafio CSS 3: Interface de Música</h1>
+    <div id="container">
+        <div class="visualizer">
+            <div class="visualizer-circle circle-1"></div>
+            <div class="visualizer-circle circle-2"></div>
+        </div>
+        
+        <div class="music-header">
+            <div class="song-info">
+                <div class="album-art"></div>
+                <div class="song-details">
+                    <h3>Música Inspiradora</h3>
+                    <p>Artista Criativo</p>
+                </div>
+            </div>
+            <div class="controls-top">
+                <button class="control-btn"><i class="fas fa-heart"></i></button>
+                <button class="control-btn"><i class="fas fa-random"></i></button>
+                <button class="control-btn"><i class="fas fa-redo"></i></button>
+            </div>
+        </div>
+        
+        <div class="waveform">
+            <div class="wave">
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+            </div>
+        </div>
+        
+        <div class="main-controls">
+            <div class="progress-container">
+                <div class="progress-bar"></div>
+            </div>
+            <div class="time-display">
+                <span>1:23</span>
+                <span>3:45</span>
+            </div>
+            
+            <div class="control-buttons">
+                <button class="secondary-btn"><i class="fas fa-step-backward"></i></button>
+                <button class="play-btn"></button>
+                <button class="secondary-btn"><i class="fas fa-step-forward"></i></button>
+            </div>
+        </div>
+        
+        <div class="playlist">
+            <div class="playlist-item active">
+                <span class="play-icon"><i class="fas fa-play"></i></span>
+                <span class="song-title">Música Inspiradora</span>
+                <span class="song-duration">3:45</span>
+            </div>
+            <div class="playlist-item">
+                <span class="play-icon"><i class="fas fa-play"></i></span>
+                <span class="song-title">Batida Eletrizante</span>
+                <span class="song-duration">4:12</span>
+            </div>
+            <div class="playlist-item">
+                <span class="play-icon"><i class="fas fa-play"></i></span>
+                <span class="song-title">Melodia Relaxante</span>
+                <span class="song-duration">5:30</span>
+            </div>
+            <div class="playlist-item">
+                <span class="play-icon"><i class="fas fa-play"></i></span>
+                <span class="song-title">Ritmo Contagiante</span>
+                <span class="song-duration">3:15</span>
+            </div>
+            <div class="playlist-item">
+                <span class="play-icon"><i class="fas fa-play"></i></span>
+                <span class="song-title">Harmonia Perfeita</span>
+                <span class="song-duration">4:45</span>
+            </div>
+        </div>
+        
+        <div class="volume-control">
+            <button class="control-btn"><i class="fas fa-volume-up"></i></button>
+            <div class="volume-slider">
+                <div class="volume-progress"></div>
+            </div>
+        </div>
+    </div>
+    <div class="nav-buttons">
+    <a href="robo.html" class="nav-btn back">Voltar</a>
+    <a href="barra.html" class="nav-btn">Próximo</a>
+</div>
+
+<script>
+    function nextChallenge() {
+        window.location.href = "barra.html";
+    }
+</script>
+
+
+    <script>
+        
+        function nextChallenge() {
+        window.location.href = "barra.html";
+    }
+
+        // Simular clique no botão play
+        const playBtn = document.querySelector('.play-btn');
+        playBtn.addEventListener('click', function() {
+            this.classList.toggle('playing');
+        });
+
+        // Simular seleção de música na playlist
+        const playlistItems = document.querySelectorAll('.playlist-item');
+        playlistItems.forEach(item => {
+            item.addEventListener('click', function() {
+                playlistItems.forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
